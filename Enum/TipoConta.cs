@@ -2,7 +2,7 @@ namespace DIO.Bank
 {
     public enum TipoConta
     {
-        PessoaFisica = 1,
+        PessoaFisica = 0,
         PessoaJuridica = 1
     }
 }
