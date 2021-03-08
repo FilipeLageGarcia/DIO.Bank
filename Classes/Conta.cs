@@ -5,6 +5,15 @@ namespace DIO.Bank
         private TipoConta TipoConta { get; set; }
         private double Saldo { get; set; }
         private double Credito { get; set; }
-        private double Nome { get; set; }
+        private string Nome { get; set; }
+
+        public Conta(TipoConta tipoConta, double saldo, double credito, string nome)
+        {
+            this.TipoConta = TipoConta;
+            this.Saldo = saldo;
+            this.Credito = credito;
+            this.Nome = nome;
+        }
+        
     }
 }
