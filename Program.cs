@@ -8,6 +8,7 @@ namespace DIO.Bank
         static List<Conta> listContas = new List<Conta>();
         static void Main(string[] args)
         {
+            Cabecalho();
             string opcaoUsuario = ObterOpcaoUsuario();
 
             while (opcaoUsuario.ToUpper() != "X")
@@ -15,22 +16,28 @@ namespace DIO.Bank
                 switch (opcaoUsuario)
                 {
                     case "1":
+                        Cabecalho();
                         ListarContas();
                         break;
                     case "2":
+                        Cabecalho();
                         InserirConta();
                         break;
                     case "3":
+                        Cabecalho();
                         Transferir();
                         break;
                     case "4":
+                        Cabecalho();
                         Sacar();
                         break;
                     case "5":
+                        Cabecalho();
                         Depositar();
                         break;
                     case "C":
                         Console.Clear();
+                        Cabecalho();
                         break;
 
                     default:
@@ -43,6 +50,14 @@ namespace DIO.Bank
 
             Console.WriteLine("Obrigado por utilizar nossos serviços.");
             Console.ReadLine();
+        }
+
+        private static void Cabecalho()
+        {
+            Console.Clear();
+            Console.WriteLine("=================================================");
+            Console.WriteLine("Garcia Bank, o meu banco simulado");
+            Console.WriteLine("=================================================");
         }
 
         private static void Transferir()
@@ -103,7 +118,7 @@ namespace DIO.Bank
         {
             Console.WriteLine("Inserir Conta");
             
-            Console.Write("Digite 1 para Conta Fisica ou 2 para conta Juridica");
+            Console.Write("Digite 1 para Conta Fisica ou 2 para conta Juridica: ");
             int entradaTipoConta = int.Parse(Console.ReadLine());
 
             Console.Write("Digite o Nome do Cliente: ");
@@ -126,7 +141,7 @@ namespace DIO.Bank
         private static string ObterOpcaoUsuario()
         {
             Console.WriteLine();
-            Console.WriteLine("DIO Bank a seu dispor!!!");
+            //Console.WriteLine("DIO Bank a seu dispor!!!");
             Console.WriteLine("Informe a opção desejada:");
 
             Console.WriteLine("1- Listar Contas");
